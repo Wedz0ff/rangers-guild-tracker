@@ -3,7 +3,7 @@ import cheerio from 'cheerio';
 import cacheData from 'memory-cache';
 
 export async function GetLastMonthExperience(charName: string) {
-  const parseUrl = `https://guildstats.eu/character?nick=${charName}`;
+  const parseUrl = `https://guildstats.eu/character?nick=${charName}&tab=7`;
 
   const cachedData = cacheData.get(parseUrl);
 
