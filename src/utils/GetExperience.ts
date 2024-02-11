@@ -50,7 +50,7 @@ export async function GetLastMonthExperience(charName: string) {
 }
 
 export async function GetMembersFromGuild(guildName: string) {
-  const parseUrl = `https://api.tibiadata.com/v3/guild/${guildName}`;
+  const parseUrl = `https://api.tibiadata.com/v4/guild/${guildName}`;
 
   const cachedData = cacheData.get(parseUrl);
 
@@ -60,7 +60,7 @@ export async function GetMembersFromGuild(guildName: string) {
 
   try {
     const { data } = await axios.get<any>(parseUrl);
-    const members = data.guilds.guild.members;
+    const members = data.guild.members;
 
     const timeToCache = 10 * 60 * 1000; // 10 minutes
 
